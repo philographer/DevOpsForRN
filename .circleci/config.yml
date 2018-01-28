@@ -85,10 +85,8 @@ workflows:
       - ios:
           requires:
             - build
+
   beta-deploy:
-    filters:
-      branches:
-        only: beta
     jobs:
       - build
       - android:
