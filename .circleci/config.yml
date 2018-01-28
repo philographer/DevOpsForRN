@@ -48,6 +48,7 @@ jobs:
           root: .
           paths:
             - vendor/*
+      - run: bundle update fastlane
       - run: bundle exec fastlane test
       - store_test_results:
           path: ~/project/android/reports
