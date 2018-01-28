@@ -27,15 +27,7 @@ jobs:
       only:
         - beta
     steps:
-      - checkout
-      - run: yarn
-      - run: yarn run test
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - node_modules
-      - store_test_results:
-          path: ~/project/junit.xml
+      - run: bundle exec fastlane beta
 
   android:
     working_directory: ~/project/android
@@ -100,4 +92,6 @@ workflows:
       - ios:
           requires:
             - build
-      - beta-deploy # only beta branch
+      - beta-deploy:
+          requires:
+            - ios
