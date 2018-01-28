@@ -45,7 +45,7 @@ jobs:
           at: ~/project
       - run: bundle install --path vendor/bundle
       - persist_to_workspace:
-          root: ~/project
+          root: .
           paths:
             - vendor
       - run: bundle exec fastlane test
@@ -70,7 +70,7 @@ jobs:
       - run: yarn
       - run: bundle install --path vendor/bundle
       - persist_to_workspace:
-          root: ~/project
+          root: .
           paths:
             - vendor
       - run: bundle exec fastlane test
