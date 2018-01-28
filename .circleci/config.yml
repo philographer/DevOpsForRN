@@ -32,7 +32,6 @@ jobs:
       - attach_workspace:
           at: ~/project
     steps:
-      - run: bundle install
       - run: bundle exec fastlane beta
 
   android:
