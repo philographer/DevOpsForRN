@@ -10,7 +10,6 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
-      - run: sudo gem install fastlane
       - run: yarn
       - run: yarn run test
       - persist_to_workspace:
@@ -32,6 +31,7 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project
+      - run: bundle update fastlane
       - run: bundle exec fastlane beta
 
 
