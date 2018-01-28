@@ -31,7 +31,6 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project
-      - run: yes | sudo gem update fastlane # update fastlane
       - run: bundle exec fastlane beta
 
 
