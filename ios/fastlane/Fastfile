@@ -1,0 +1,23 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :beta do
+    sync_code_signing(type: "appstore")    # see code signing guide for more information
+    build_app(scheme: "DevOpsForRN")
+    upload_to_testflight
+    slack(message: "Successfully distributed a new beta build")
+  end
+end
+
