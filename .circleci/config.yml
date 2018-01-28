@@ -27,7 +27,8 @@ jobs:
 #      only:
 #        - beta
     steps:
-      - run: bundle exec fastlane beta
+      - run: bundle install
+      - run: bundle exec fastlane test
 
   android:
     working_directory: ~/project/android
