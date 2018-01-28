@@ -31,8 +31,8 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project
-    steps:
       - run: bundle exec fastlane beta
+
 
   android:
     working_directory: ~/project/android
