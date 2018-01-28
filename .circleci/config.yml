@@ -17,6 +17,11 @@ jobs:
       - store_test_results:
           path: ~/project/junit.xml
 
+  beta:
+    working_directory: ~/project/ios
+    steps:
+      - run: bundle exec fastlane beta
+
   android:
     working_directory: ~/project/android
     docker:
@@ -72,6 +77,18 @@ jobs:
 workflows:
   version: 2
   node-android-ios:
+    jobs:
+      - build
+      - android:
+          requires:
+            - build
+      - ios:
+          requires:
+            - build
+  beta-deploy:
+    filters:
+      branches:
+        only: beta
     jobs:
       - build
       - android:
