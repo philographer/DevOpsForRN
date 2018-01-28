@@ -31,6 +31,7 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project/ios
+      - run: bundle update fastlane
       - run: bundle exec fastlane beta
 
 
@@ -48,7 +49,6 @@ jobs:
           root: .
           paths:
             - vendor/*
-      - run: bundle update fastlane
       - run: bundle exec fastlane test
       - store_test_results:
           path: ~/project/android/reports
