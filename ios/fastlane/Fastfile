@@ -12,12 +12,26 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Build and run tests"
+  lane :test do
+    scan
+  end
+
   lane :beta do
-    sync_code_signing(type: "appstore")    # see code signing guide for more information
+    desc "TesfFlight for IOS"
+    # Circle CI does not create new code signing certificates or provisioning profiles.
+    sync_code_signing(type: "appstore", readonly: true)    # see code signing guide for more information, readonly because of CircleCI
     build_app(scheme: "DevOpsForRN")
-    upload_to_testflight
-    slack(message: "Successfully distributed a new beta build")
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+    # slack(
+    #   slack_url: "https://hooks.slack.com/services/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"
+    #   channel: "dev",
+    #   message: "Successfully uploaded a fastlane beta release"
+    # )
   end
 end
 
