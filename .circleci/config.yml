@@ -47,7 +47,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - vendor
+            - vendor/*
       - run: bundle exec fastlane test
       - store_test_results:
           path: ~/project/android/reports
@@ -72,7 +72,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - vendor
+            - vendor/*
       - run: bundle exec fastlane test
       - run:
           command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
