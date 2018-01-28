@@ -30,7 +30,7 @@ jobs:
       - checkout:
           path: ~/project
       - attach_workspace:
-          at: ~/project
+          at: ~/project/ios
       - run: bundle exec fastlane beta
 
 
