@@ -38,13 +38,7 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project
-      - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
       - run: bundle install
-      - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
       - run: bundle exec fastlane test
       - store_test_results:
           path: ~/project/android/reports

@@ -1,0 +1,3 @@
+scheme "DevOpsForRN"
+devices ["iPhone 7"]
+clean true
