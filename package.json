@@ -5,11 +5,14 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "deploy": "cd ios && fastlane increase_build_number_and_push_to_beta"
+    "native-test": "tools/run_native_test.sh",
+    "beta-deploy": "tools/run_beta_deploy.sh",
+    "deploy": "tools/run_deploy.sh"
   },
   "dependencies": {
     "react": "16.2.0",
-    "react-native": "0.52.1"
+    "react-native": "0.52.1",
+    "react-native-fabric": "^0.5.1"
   },
   "devDependencies": {
     "babel-jest": "22.1.0",
