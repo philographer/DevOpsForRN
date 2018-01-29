@@ -23,7 +23,6 @@ platform :ios do
 
   lane :beta do
     desc "TesfFlight for IOS"
-    increase_build_number
     # Circle CI does not create new code signing certificates or provisioning profiles.
     sync_code_signing(type: "appstore", readonly: true)    # see code signing guide for more information, readonly because of CircleCI
     build_app(scheme: "DevOpsForRN")
@@ -36,7 +35,7 @@ platform :ios do
   end
 end
 
-lane :increase_build_number do |values|
+lane :increase_build_number_and_push_to_beta do |values|
     # Increment the build number (not the version number)
     # Providing the xcodeproj is optional
     increment_build_number(xcodeproj: "DevOpsForRN.xcodeproj")

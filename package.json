@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "deploy": "cd ios && fastlane beta"
+    "deploy": "cd ios && fastlane increase_build_number_and_push_to_beta"
   },
   "dependencies": {
     "react": "16.2.0",
