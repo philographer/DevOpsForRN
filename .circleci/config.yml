@@ -56,7 +56,7 @@ jobs:
           at: ~/project
       - run: bundle install --path vendor/bundle
       - persist_to_workspace:
-          root: /Users/distiller/project
+          root: ~/project
           paths:
             - android
       - run: bundle exec fastlane test
@@ -81,14 +81,14 @@ jobs:
       - run: yarn
       - run: bundle install --path vendor/bundle
       - persist_to_workspace:
-          root: /Users/distiller/project
+          root: ~/project
           paths:
             - ios
       - run: bundle exec fastlane test
       - store_artifacts:
-          path: /Users/distiller/project/output
+          path: ~/project/output
       - store_test_results:
-          path: /Users/distiller/project/output/scan
+          path: ~/project/output/scan
 
 workflows:
   version: 2
@@ -98,6 +98,13 @@ workflows:
       - android:
           requires:
             - build
+      - beta-deploy-android:
+          filters:
+            branches:
+              only:
+                - beta
+          requires:
+            - android
       - ios:
           requires:
             - build
@@ -108,10 +115,3 @@ workflows:
                 - beta
           requires:
             - ios
-      - beta-deploy-android:
-            filters:
-              branches:
-                only:
-                  - beta
-            requires:
-              - android
