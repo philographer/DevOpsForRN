@@ -1220,7 +1220,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 77S8MPV96M;
 				INFOPLIST_FILE = DevOpsForRN/Info.plist;
@@ -1243,10 +1243,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 77S8MPV96M;
 				INFOPLIST_FILE = DevOpsForRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1256,8 +1256,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teammondrian.devopsrn;
 				PRODUCT_NAME = DevOpsForRN;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "174e9bab-234a-403e-9c6a-e28784ae8205";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.teammondrian.devopsrn";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
