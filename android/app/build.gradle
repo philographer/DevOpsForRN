@@ -132,6 +132,12 @@ android {
                 output.versionCodeOverride =
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
             }
+            // 시간별로 빌드
+            def formattedDate = new Date().format('yyyy-MM-dd-HH-mm-ss')
+            def newName = output.outputFile.name
+            newName = newName.replace("-release", "-release" + formattedDate)
+            output.outputFile = new File(output.outputFile.parent, newName)
+
         }
     }
 }
