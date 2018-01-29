@@ -42,7 +42,7 @@ jobs:
             at: ~/project
         - run: bundle update fastlane
         - run: bundle exec fastlane beta
-        - run: pip install awscli --upgrade --user
+        - run: sudo apt-get update && sudo apt-get install -y awscli
         - run: aws s3 sync app/build/outputs s3://devops-react-native/
 
 
