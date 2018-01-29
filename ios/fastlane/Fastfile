@@ -24,7 +24,7 @@ platform :ios do
   lane :beta do
     desc "TesfFlight for IOS"
     # Circle CI does not create new code signing certificates or provisioning profiles.
-    sync_code_signing(type: "appstore", readonly: true)    # see code signing guide for more information, readonly because of CircleCI
+    sync_code_signing(type: "appstore", readonly: true, app_identifier: "com.teammondrian.devopsrn")    # see code signing guide for more information, readonly because of CircleCI
     build_app(scheme: "DevOpsForRN")
     upload_to_testflight(skip_waiting_for_build_processing: true)
     # slack(
