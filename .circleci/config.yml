@@ -34,7 +34,7 @@ jobs:
   beta-deploy-android:
       working_directory: ~/project/android
       docker:
-        - image: circleci/node:8
+        - image: circleci/ruby:latest-node
       steps:
         - checkout:
             path: ~/project
