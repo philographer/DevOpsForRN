@@ -15,9 +15,9 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-### increase_build_number
+### increase_build_number_and_push_to_beta
 ```
-fastlane increase_build_number
+fastlane increase_build_number_and_push_to_beta
 ```
 
 
