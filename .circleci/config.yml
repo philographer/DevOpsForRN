@@ -23,9 +23,6 @@ jobs:
     working_directory: ~/project/ios
     macos:
       xcode: "9.0"
-    branches:
-      only:
-        - beta
     steps:
       - checkout:
           path: ~/project
@@ -92,5 +89,9 @@ workflows:
           requires:
             - build
       - beta-deploy:
+          filters:
+            branches:
+              only:
+                - beta
           requires:
             - ios
