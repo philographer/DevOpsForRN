@@ -6,8 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "native-test": "tools/run_native_test.sh",
-    "beta": "tools/run_beta_deploy.sh",
-    "deploy": "tools/run_deploy.sh"
+    "beta": "tools/run_beta_deploy.sh"
   },
   "dependencies": {
     "react": "16.2.0",
